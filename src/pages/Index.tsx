@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 
 const WOOD_IMAGE = "https://cdn.poehali.dev/projects/13ec3cbd-7dc8-4d97-816c-fcf70f7de9c3/files/d119a609-2e1c-49d6-b435-2fc2f088206c.jpg";
+const TRUCK_IMAGE = "https://cdn.poehali.dev/projects/13ec3cbd-7dc8-4d97-816c-fcf70f7de9c3/bucket/1f690fae-8d3f-4d6a-aa96-1d19f7c2759e.jpg";
 
 const products = [
   {
@@ -282,27 +283,36 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Truck visual */}
+            {/* Truck photo */}
             <div className="flex items-center justify-center">
               <div className="relative">
-                <div className="w-72 h-72 rounded-full flex flex-col items-center justify-center text-center"
+                <div className="rounded-xl overflow-hidden"
                   style={{
-                    background: 'radial-gradient(circle, rgba(249,115,22,0.12) 0%, rgba(249,115,22,0.03) 60%, transparent 100%)',
-                    border: '1px solid rgba(249,115,22,0.2)',
-                    boxShadow: '0 0 80px rgba(249,115,22,0.1)'
+                    boxShadow: '0 0 60px rgba(249,115,22,0.25), 0 0 120px rgba(239,68,68,0.1)',
+                    border: '1px solid rgba(249,115,22,0.25)',
                   }}>
-                  <div className="text-7xl mb-3">🚛</div>
-                  <div style={{ fontFamily: 'Oswald, sans-serif', color: '#F97316', fontWeight: 700, fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                    HOWO
-                  </div>
-                  <div className="text-xs mt-1" style={{ color: 'rgba(245,230,211,0.4)', fontFamily: 'Oswald, sans-serif', letterSpacing: '0.1em' }}>
-                    НАРОЩЕННЫЕ СТОЙКИ
+                  <img
+                    src={TRUCK_IMAGE}
+                    alt="Самосвал HOWO с дровами"
+                    className="w-full max-w-md object-cover"
+                    style={{ display: 'block' }}
+                  />
+                  <div className="absolute inset-0"
+                    style={{ background: 'linear-gradient(180deg, transparent 55%, rgba(13,7,3,0.85) 100%)' }} />
+                  <div className="absolute bottom-0 left-0 right-0 px-6 py-5 flex items-center justify-between">
+                    <div>
+                      <div style={{ fontFamily: 'Oswald, sans-serif', color: '#F97316', fontWeight: 700, fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                        HOWO 320
+                      </div>
+                      <div className="text-xs" style={{ color: 'rgba(245,230,211,0.5)', fontFamily: 'Oswald, sans-serif', letterSpacing: '0.1em' }}>
+                        НАРОЩЕННЫЕ СТОЙКИ
+                      </div>
+                    </div>
+                    <div className="w-3 h-3 rounded-full animate-pulse" style={{ background: '#F97316' }} />
                   </div>
                 </div>
-                <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full animate-pulse"
-                  style={{ background: '#F97316' }} />
-                <div className="absolute -bottom-2 -left-2 w-3 h-3 rounded-full animate-pulse"
-                  style={{ background: '#F59E0B', animationDelay: '0.5s' }} />
+                <div className="absolute -bottom-3 -right-3 w-24 h-24 rounded-full opacity-20 animate-pulse-glow"
+                  style={{ background: 'radial-gradient(circle, #F97316, transparent)' }} />
               </div>
             </div>
           </div>
